@@ -1,0 +1,280 @@
+:root {
+  --primary-color: #fdb863;
+  --primary-dark: #b35806;
+  --title-color: #542788;
+  --text-color: #2d3748;
+  --background-light: #f7f7f7;
+  --background-orange: #fee0b6;
+  --white: #ffffff;
+  --shadow: 0 2px 6px rgba(0,0,0,0.1);
+  --button-text: #8073ac;
+  --button-text-hover: #f7f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  padding-top: 80px;
+}
+
+/* Barra de navegación - 100% ancho */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.active {
+  color: var(--title-color);
+}
+
+#navbar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--title-color);
+}
+
+/* SECCIONES - 100% ANCHO DE PANTALLA */
+section {
+  padding: 6rem 0;
+  width: 100%;
+  scroll-margin-top: 80px;
+}
+
+/* Contenedor interno para centrar contenido pero mantener fondo al 100% */
+.section-content {
+  max-width: 100%;
+  padding: 0 2rem;
+}
+
+/* Sección de inicio - 100% ancho */
+#inicio {
+  text-align: center;
+  padding: 8rem 0;
+}
+
+#inicio .section-content {
+  max-width: 100%;
+}
+
+#inicio h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#inicio h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+#inicio p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+/* Títulos y contenido - 100% ancho */
+section h2 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--title-color);
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+section h3 {
+  margin: 2rem 0 1.5rem 0;
+  font-size: 1.8rem;
+  color: var(--title-color);
+  line-height: 1.4;
+  width: 100%;
+}
+
+section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+section ul {
+  margin: 2rem 0;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+section li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  margin: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
+  text-align: center;
+  min-width: 220px;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--button-text-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 88, 6, 0.3);
+}
+
+/* Fondos alternos - 100% ancho */
+section:nth-child(even) {
+  background-color: var(--background-light);
+}
+
+section:nth-child(odd):not(#inicio) {
+  background-color: var(--background-orange);
+}
+
+#participa {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  section {
+    padding: 4rem 0;
+    scroll-margin-top: 70px;
+  }
+  
+  #inicio {
+    padding: 6rem 0;
+  }
+  
+  .section-content {
+    padding: 0 1rem;
+  }
+  
+  #inicio h1 {
+    font-size: 2.5rem;
+  }
+  
+  #inicio h2 {
+    font-size: 1.5rem;
+  }
+  
+  section h2 {
+    font-size: 2.2rem;
+  }
+  
+  section h3 {
+    font-size: 1.4rem;
+  }
+  
+  section p,
+  section li {
+    font-size: 1.1rem;
+  }
+  
+  .btn {
+    display: block;
+    margin: 0.5rem auto;
+    min-width: 250px;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #inicio h1 {
+    font-size: 2rem;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+  }
+  
+  #navbar ul {
+    gap: 0.25rem;
+  }
+  
+  #navbar ul li a {
+    font-size: 0.9rem;
+  }
+  
+  .section-content {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Ocultar barras no deseadas */
+nav.bg-near-white,
+nav:not(#navbar),
+header .flex-none,
+nav[class*="bg-"]:not(#navbar) {
+    display: none !important;
+}
