@@ -139,9 +139,14 @@
 
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center lh-copy nested-links mid-gray">
     <!-- Barra de navegación fija -->
 <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow z-50">
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
   <ul class="flex justify-center space-x-6 p-4">
     <li><a href="#inicio" class="hover:text-green-700">Inicio</a></li>
     <li><a href="#sobre" class="hover:text-green-700">Sobre</a></li>
@@ -240,6 +245,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   changeActive();
   window.addEventListener('scroll', changeActive);
+});
+
+// Toggle mobile menu
+document.getElementById('mobile-menu').addEventListener('click', function () {
+  document.querySelector('#navbar ul').classList.toggle('active');
 });
 </script>
 
