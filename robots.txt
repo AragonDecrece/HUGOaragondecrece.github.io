@@ -1,2 +1,1 @@
-User-agent: *
-Disallow: /
+Sitemap: https://aragondecrece.github.io/sitemap.xml
